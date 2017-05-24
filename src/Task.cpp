@@ -31,6 +31,7 @@ Task::Task(unsigned long periodMs, void (*callback)(Task* me)) {
   this->setPeriodMs(periodMs);
   this->callback = callback;
   this->lastCallTimeMicros = 0;
+  this->totalMicrosInTask = 0;
   this->nextTask = NULL;
 }
 

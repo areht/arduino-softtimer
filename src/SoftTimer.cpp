@@ -118,6 +118,7 @@ void SoftTimerClass::testAndCall(Task* task) {
   {
     task->nowMicros = now;
     task->callback(task);
+    task->totalMicrosInTask += micros() - now;
     task->lastCallTimeMicros = now;
   }
 }
