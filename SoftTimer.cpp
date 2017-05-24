@@ -115,6 +115,7 @@ void SoftTimerClass::testAndCall(Task* task) {
     || ((now < task->lastCallTimeMicros) && (task->lastCallTimeMicros <= calc))) // -- timer overflows, but interval-end does not
   {
     task->callback(task);
+    task->totalMicrosInTask += micros() - now;
     task->lastCallTimeMicros = now;
   }
 }

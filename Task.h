@@ -51,6 +51,11 @@ class Task
      * The timeslot in milliseconds the handler should be called. If the value is near 1 the handler will be called in every loop.
      */
     unsigned long periodMicros;
+
+    /**
+     * Total time spent in this task in milliseconds.
+    */
+    unsigned long totalMicrosInTask;
     
     /**
      * The last call (start) time of the task. You can reset the task by setting this value to micros().
